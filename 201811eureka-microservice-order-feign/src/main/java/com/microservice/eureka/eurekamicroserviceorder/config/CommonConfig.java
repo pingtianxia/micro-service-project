@@ -1,5 +1,6 @@
 package com.microservice.eureka.eurekamicroserviceorder.config;
 
+import feign.Logger;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,5 +27,14 @@ public class CommonConfig {
     @LoadBalanced
     public RestTemplate restTemplate(){
         return new RestTemplate();
+    }
+
+    /**
+     * Feign添加日志输出
+     * @return
+     */
+    @Bean
+    Logger.Level feignLoggerLevel(){
+        return Logger.Level.FULL;
     }
 }
