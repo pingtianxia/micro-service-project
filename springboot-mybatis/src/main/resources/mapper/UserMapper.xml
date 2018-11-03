@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hyp.springbootmybatis.dao.UserMapper">
+
+    <select id="getUserInfoByUserCode" parameterType="String" resultType="com.hyp.springbootmybatis.entity.UserInfo">
+        select userName,userCode,mobile,
+        CASE WHEN userSex=0 THEN '男' WHEN userSex=1 THEN '女' ELSE '' END AS userSex,
+        CASE WHEN level = 0 THEN '客户专员' WHEN level = 1 THEN '理财顾问' WHEN level = 2 THEN '创业经理' WHEN level = 3 THEN '业务部经理' ELSE '兼职客户专员' END AS level
+        from bxfw_fieldpersonnel_user where userCode = #{userCode}
+    </select>
+</mapper>
