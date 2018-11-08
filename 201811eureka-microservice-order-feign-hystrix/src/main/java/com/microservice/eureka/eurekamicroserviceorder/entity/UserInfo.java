@@ -1,7 +1,7 @@
-package com.microservice.eureka.microserviceorderhystrix.entity;
+package com.microservice.eureka.eurekamicroserviceorder.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import jdk.nashorn.internal.objects.annotations.Getter;
+import jdk.nashorn.internal.objects.annotations.Setter;
 
 /**
  * @包 名: com.microservice.eureka.eurekamicroserviceuser.entity
@@ -11,8 +11,6 @@ import lombok.Setter;
  * @邮 箱: henanyunpingearl@163.com
  * @创建日期: 2018/11/1 20:20
  */
-@Setter
-@Getter
 public class UserInfo {
     private String userCode;
     private String userName;
